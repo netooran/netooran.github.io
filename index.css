@@ -1,0 +1,22 @@
+html,
+body {
+  margin: 5px;
+  padding: 0;
+  background-color: black;
+  color: azure;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 8vw;
+}
+
+b {
+  color: lightseagreen;
+}
