@@ -2,15 +2,47 @@
   <head>
     <title>Netooran</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Ultra&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
-      <div class="container">
-        <h1>
-          Hi, I'm <b>{{ name }}</b>
-        </h1>
-      </div>
+      <section class="profile">
+        <h1>{{ firstName }}<br />{{lastName}}</h1>
+        <h2>{{profession}} at {{company}}</h2>
+      </section>
+      <h2>Projects</h2>
+      <section id="projects">
+        <div
+          v-for="project in projects"
+          :key="project.name"
+          class="card project"
+        >
+          <h1>{{ project.name }}</h1>
+          <main>
+            <p>{{project.description}}</p>
+
+            <ul class="stack">
+              <li v-for="item in project.stack" :key="item" class="stack-item">
+                {{item}}
+              </li>
+            </ul>
+          </main>
+          <footer class="button-group">
+            <a :href="project.github" target="blank" class="button secondary"
+              >Github</a
+            >
+            <a :href="project.url" target="blank" class="button primary launch"
+              >Launch</a
+            >
+          </footer>
+        </div>
+      </section>
     </div>
 
     <script src="index.js"></script>

@@ -1,22 +1,120 @@
+:root {
+  --primary-color: tomato;
+  --primary-color-light: rgb(255, 237, 234);
+  --secondary-color: lightblue;
+
+  --card-bg-color: rgb(255, 248, 247);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 5px;
   padding: 0;
-  background-color: black;
-  color: azure;
+  font-family: "Poppins", sans-serif;
 }
 
-.container {
-  height: 100%;
+body {
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 8vw;
+/* Generic styles */
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-b {
-  color: lightseagreen;
+.card h1 {
+  margin: unset;
+  margin-bottom: 1rem;
+}
+
+.card main {
+  flex-grow: 1;
+}
+
+/* Specific styles */
+
+.profile {
+  margin-bottom: 3rem;
+}
+
+.profile h1 {
+  font-size: 5rem;
+  font-family: "Ultra", serif;
+  margin-bottom: 1rem;
+}
+
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.project {
+  width: calc(50% - 3rem);
+}
+
+.stack {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding-left: unset;
+}
+
+.stack .stack-item {
+  border: 1px solid var(--secondary-color);
+  border-radius: 3rem;
+  padding: 0.5rem 1rem;
+}
+
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.button {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bolder;
+  border-radius: 0.75rem;
+}
+
+.button.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button.primary:hover {
+  filter: brightness(95%);
+}
+
+.button.secondary {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.button.secondary:hover {
+  background-color: var(--primary-color-light);
+}
+
+.launch::after {
+  content: " \279C";
+  display: inline-block;
+  padding-left: 0.5rem;
+  transition: transform 0.3s ease-out;
+}
+
+.launch:hover::after {
+  transform: translateX(0.4rem);
 }
